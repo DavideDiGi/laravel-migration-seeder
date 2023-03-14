@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Guest\MainController;
+
+// Models
+use App\Models\Train;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MainController::class, 'index']);
+    // $trains = Train::all();
+
+    // dd($trains);
+
+    // return view('welcome');
